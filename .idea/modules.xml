@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/Order_Management_BackEnd/OM_Customer_Microservice/OrderManagement_CustomerMicroservice.iml" filepath="$PROJECT_DIR$/Order_Management_BackEnd/OM_Customer_Microservice/OrderManagement_CustomerMicroservice.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Order_Management_BackEnd/OM_Order_Microservice/OrderManagement_OrderMicroservice.iml" filepath="$PROJECT_DIR$/Order_Management_BackEnd/OM_Order_Microservice/OrderManagement_OrderMicroservice.iml" />
+    </modules>
+  </component>
+</project>
