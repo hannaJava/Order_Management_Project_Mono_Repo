@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/OM_CustomerMicroservice/OM_CustomerMicroservice.iml" filepath="$PROJECT_DIR$/OM_CustomerMicroservice/OM_CustomerMicroservice.iml" />
+      <module fileurl="file://$PROJECT_DIR$/OM_DiscoveryServer/OM_DiscoveryServer.iml" filepath="$PROJECT_DIR$/OM_DiscoveryServer/OM_DiscoveryServer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/OM_OrderMicroservice/OM_OrderMicroservice.iml" filepath="$PROJECT_DIR$/OM_OrderMicroservice/OM_OrderMicroservice.iml" />
+      <module fileurl="file://$PROJECT_DIR$/OM_ProductMicroservice/OM_ProductMicroservice.iml" filepath="$PROJECT_DIR$/OM_ProductMicroservice/OM_ProductMicroservice.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/Order_Management_BackEnd.iml" filepath="$PROJECT_DIR$/.idea/Order_Management_BackEnd.iml" />
+    </modules>
+  </component>
+</project>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="OM_OrderMicroservice" />
+        <module name="OM_CustomerMicroservice" />
+        <module name="OM_DiscoveryServer" />
+        <module name="OM_ProductMicroservice" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="OM_CustomerMicroservice" target="17" />
+      <module name="OM_DiscoveryServer" target="17" />
+      <module name="OM_OrderMicroservice" target="17" />
+      <module name="OM_ProductMicroservice" target="17" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="OM_CustomerMicroservice" options="-parameters" />
+      <module name="OM_DiscoveryServer" options="-parameters" />
+      <module name="OM_OrderMicroservice" options="-parameters" />
+      <module name="OM_ProductMicroservice" options="-parameters" />
+    </option>
+  </component>
+</project>
