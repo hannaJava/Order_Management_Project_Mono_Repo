@@ -20,6 +20,6 @@ public class Order {
     @Column(name="customer_id")
     private long customerId;
 
-    @Column(name="products_list")
-    private List<Long> productsList;
+    @Column(name="products_id")
+    private long productId;
 }

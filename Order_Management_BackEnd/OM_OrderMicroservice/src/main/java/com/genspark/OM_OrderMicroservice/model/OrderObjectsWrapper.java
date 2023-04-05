@@ -5,11 +5,10 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Data
-@AllArgsConstructor
 @NoArgsConstructor
-public class Product {
-    private long id;
-    private String name;
-    private double unitPrice;
-    private int qte;
+@AllArgsConstructor
+public class OrderObjectsWrapper {
+    private Order order;
+    private Product product;
+    private Customer customer;
 }
