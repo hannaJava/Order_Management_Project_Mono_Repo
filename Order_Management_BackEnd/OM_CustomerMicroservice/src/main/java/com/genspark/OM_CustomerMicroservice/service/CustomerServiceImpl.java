@@ -4,10 +4,12 @@ import com.genspark.OM_CustomerMicroservice.exception.RecordNotFoundException;
 import com.genspark.OM_CustomerMicroservice.model.Customer;
 import com.genspark.OM_CustomerMicroservice.repository.CustomerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 
 import java.util.List;
 
+@Service
 public class CustomerServiceImpl implements CustomerServiceInt{
     @Autowired
     CustomerRepository customerRepository;
@@ -29,7 +31,7 @@ public class CustomerServiceImpl implements CustomerServiceInt{
 
     @Override
     public List<Customer> getCustomerByAddress(String address) {
-        customerRepository.getByAddress();
+        customerRepository.getByAddress(address);
         return customerRepository.getByAddress(address);
     }
 

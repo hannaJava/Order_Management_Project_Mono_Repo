@@ -4,10 +4,12 @@ import com.genspark.OM_ProductMicroservice.exception.RecordNotFoundException;
 import com.genspark.OM_ProductMicroservice.model.Product;
 import com.genspark.OM_ProductMicroservice.repository.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 
 import java.util.List;
 
+@Service
 public class ProductServiceImpl implements ProductServiceInt{
     @Autowired
     ProductRepository productRepository;

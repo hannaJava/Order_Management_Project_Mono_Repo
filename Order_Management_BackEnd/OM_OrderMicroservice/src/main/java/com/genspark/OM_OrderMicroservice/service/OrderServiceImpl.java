@@ -4,10 +4,12 @@ import com.genspark.OM_OrderMicroservice.exception.RecordNotFoundException;
 import com.genspark.OM_OrderMicroservice.model.Order;
 import com.genspark.OM_OrderMicroservice.repository.OrderRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 
 import java.util.List;
 
+@Service
 public class OrderServiceImpl implements OrderServiceInt{
     @Autowired
     OrderRepository orderRepository;

@@ -5,6 +5,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name="order_tbl")
@@ -16,4 +17,9 @@ public class Order {
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name="order_id")
     private Long id;
+    @Column(name="customer_id")
+    private long customerId;
+
+    @Column(name="products_list")
+    private List<Long> productsList;
 }

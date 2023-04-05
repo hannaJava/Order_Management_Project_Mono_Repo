@@ -1,6 +1,7 @@
 package com.genspark.OM_CustomerMicroservice.service;
 
 import com.genspark.OM_CustomerMicroservice.model.Customer;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
