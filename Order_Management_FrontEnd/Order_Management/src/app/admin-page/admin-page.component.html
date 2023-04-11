@@ -1,0 +1,39 @@
+<header>
+    <h1 class="text-center">Order Management Application</h1>
+    <h3 class="text-center">Admin Page</h3>
+  </header>
+  <main>
+    <ul class="nav flex-column">
+        <li class="nav-item">
+          <a routerLink="/list_customers" routerLinkActive="active" class="nav-link" >Dashoard</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">logout</a>
+        </li>
+      </ul>
+    <div class="container">
+            <div class="row">
+                <div class="col"><button (click)="dashboard()" class="btn btn-success" type="submit">DashBoard</button></div>
+                <div class="w-100"></div> 
+                <div class="col"><button (click)="logout()" class="btn btn-success" type="submit">Logout</button></div>
+            </div>
+            <div class="row">
+                <div class="col"><button (click)="addCustomer()" class="btn btn-success" type="submit">Add Customer</button></div>
+                <div class="col"><button (ngSubmit)="updateDeleteCustomer()" class="btn btn-success" type="submit">Update/Delete Customer</button></div>
+                <div class="col"><button (ngSubmit)="listCustomers()" class="btn btn-success" type="submit">List Customers</button></div>
+            </div>
+            <div class="row">
+                <div class="col"><button (ngSubmit)="addProduct()" class="btn btn-success" type="submit">Add Product</button></div>
+                <div class="col"><button (ngSubmit)="updateDeleteProduct()" class="btn btn-success" type="submit">Update/Delete Product</button></div>
+                <div class="col"><button (ngSubmit)="listProducts()" class="btn btn-success" type="submit">List Products</button></div>
+            </div>
+            <div class="row">    
+                <div class="col"><button (ngSubmit)="listOrders()" class="btn btn-success" type="submit">List Orders</button></div>          
+            </div>
+    </div>
+  </main>
+  <footer>
+    <div>
+        <span></span>
+    </div>
+  </footer>

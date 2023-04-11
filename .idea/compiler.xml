@@ -9,6 +9,7 @@
         <module name="HR_management_eureka_discovery_server" />
         <module name="OM_KafkaConsumerMicroservice" />
         <module name="OM_ProductMicroservice" />
+        <module name="OM_EntryPointMicroservice" />
         <module name="OM_KafkaProducerMicroservice" />
         <module name="OM_OrderMicroservice" />
         <module name="OM_CustomerMicroservice" />
@@ -17,12 +18,6 @@
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="HR_management_eureka_discovery_server" target="17" />
-      <module name="OM_CustomerMicroservice" target="17" />
-      <module name="OM_DiscoveryServer" target="17" />
-      <module name="OM_KafkaConsumerMicroservice" target="17" />
-      <module name="OM_KafkaProducerMicroservice" target="17" />
-      <module name="OM_OrderMicroservice" target="17" />
-      <module name="OM_ProductMicroservice" target="17" />
       <module name="OrderManagement_CustomerMicroservice" target="17" />
       <module name="OrderManagement_DiscoveryServer" target="17" />
       <module name="OrderManagement_KafkaConsumerMicroservice" target="17" />
@@ -35,6 +30,7 @@
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="OM_CustomerMicroservice" options="-parameters" />
       <module name="OM_DiscoveryServer" options="-parameters" />
+      <module name="OM_EntryPointMicroservice" options="-parameters" />
       <module name="OM_KafkaConsumerMicroservice" options="-parameters" />
       <module name="OM_KafkaProducerMicroservice" options="-parameters" />
       <module name="OM_OrderMicroservice" options="-parameters" />

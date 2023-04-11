@@ -3,7 +3,9 @@ package com.genspark.OM_CustomerMicroservice.service;
 import com.genspark.OM_CustomerMicroservice.exception.RecordNotFoundException;
 import com.genspark.OM_CustomerMicroservice.model.Customer;
 import com.genspark.OM_CustomerMicroservice.repository.CustomerRepository;
+import org.bouncycastle.crypto.generators.BCrypt;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 
@@ -16,6 +18,9 @@ public class CustomerServiceImpl implements CustomerServiceInt{
 
     @Override
     public Customer saveCustomer(Customer customer) {
+        BCryptPasswordEncoder bcrypt=new BCryptPasswordEncoder();
+        String encryptedPassword=bcrypt.encode(customer.getPassword());
+        customer.setPassword(encryptedPassword);
         return customerRepository.save(customer);
     }
 

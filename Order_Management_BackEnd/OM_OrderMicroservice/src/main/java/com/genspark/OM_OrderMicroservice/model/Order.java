@@ -18,8 +18,8 @@ public class Order {
     @Column(name="order_id")
     private Long id;
     @Column(name="customer_id")
-    private long customerId;
+    private Long customerId;
 
     @Column(name="products_id")
-    private long productId;
+    private Long productId;
 }

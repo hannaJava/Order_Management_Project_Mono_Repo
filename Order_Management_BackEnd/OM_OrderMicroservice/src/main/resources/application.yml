@@ -1,6 +1,13 @@
-resilience4j.retry:
-  instances:
-    ORDER-SERVICE:
-      maxRetryAttempts: 3
-      waitDuration: 10000
-      
+resilience4j:
+  circuit breaker:
+    instances:
+      order_circuit_breaker:
+        failureRateThreshold: 50
+        minimumNumberOfCalls: 5
+
+
+  retry:
+    instances:
+     ORDER-SERVICE:
+        maxRetryAttempts: 3
+        waitDuration: 10000

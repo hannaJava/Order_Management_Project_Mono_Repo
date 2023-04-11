@@ -1,0 +1,39 @@
+<header>
+    <h1 class="text-center">Order Management Application</h1>
+</header>
+<main>
+    <h3 class="text-center"> Add a new order</h3>
+    <table class="table table-striped table-bordered">
+        <thead class="table-dark">
+               <tr>
+                  <th scope="col">Name</th>
+                  <th scope="col">Description</th>
+                  <th scope="col">Unit price</th>
+                  <th scope="col">Quantity</th> 
+                </tr>
+          </thead>
+          <tbody>
+           <tr *ngFor = "let product of products">
+                <!--<td>{{product.id}}</td>-->
+                <td>{{product.name}}</td>
+                <td>{{product.description}}</td>
+                <td>{{product.unitPrice}}</td>
+                <td>{{product.qte}}</td>
+            </tr>
+          </tbody>
+    </table>
+    <form>
+        <div class="form-group">
+            <label for="qte">Quantity</label>
+            <input type="text" class="form-control" id="qte" placeholder="Enter quantity">
+        </div>
+        <div class="form-group">
+            <label for="file1">Uplaod gift</label>
+            <input type="file" class="form-control-file" id="file1">   
+        </div>
+        <button type="submit" class="btn btn-primary">Create Order</button>
+  </form>
+</main>
+<footer>
+
+</footer>

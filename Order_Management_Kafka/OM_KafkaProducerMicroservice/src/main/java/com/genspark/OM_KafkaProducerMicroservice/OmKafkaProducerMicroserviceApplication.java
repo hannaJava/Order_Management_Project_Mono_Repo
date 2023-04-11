@@ -2,8 +2,10 @@ package com.genspark.OM_KafkaProducerMicroservice;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 
 @SpringBootApplication
+@EnableEurekaClient
 public class OmKafkaProducerMicroserviceApplication {
 
 	public static void main(String[] args) {
