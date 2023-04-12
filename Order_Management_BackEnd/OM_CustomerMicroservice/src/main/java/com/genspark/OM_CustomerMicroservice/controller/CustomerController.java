@@ -8,7 +8,8 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/order_management/customers")
+@CrossOrigin("*")
+@RequestMapping("/order_manage/customers")
 public class CustomerController {
 
     @Autowired
@@ -20,6 +21,11 @@ public class CustomerController {
     @GetMapping("/{id}")
     public Customer getCustomerById(@PathVariable("id") long id){
         return customerService.getCustomerById(id);
+    }
+
+    @GetMapping("/{username}")
+    public Long getCustomerById(@PathVariable("username") String username){
+        return customerService.getCustomerByUsername(username).getId();
     }
     /*@PostMapping("/add")
     public Customer saveCustomer(@RequestBody Customer Customer){

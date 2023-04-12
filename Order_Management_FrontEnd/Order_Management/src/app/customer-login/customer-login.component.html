@@ -1,12 +1,22 @@
-<div class="col-md-8 offset-md-3">
+<header>
+    <app-app-header></app-app-header>
+    </header>
+<main>
+    <div class="col-md-8 offset-md-3">
     <h2>Customer Login Page</h2>
     <form (ngSubmit)="login()">
         <div class="form-group">
             <label>Username</label>
-            <input type="text" class="form-control" id="username" name="username">
+            <input type="text" class="form-control" id="username" name="username"
+            [(ngModel)]="customer.username" name="username">
             <label>Password</label>
-            <input type="password" class="form-control" id="password" name="password">
+            <input type="password" class="form-control" id="password" name="password"
+            [(ngModel)]="customer.password" name="password">
         </div>
         <button class="btn btn-success" type="submit">Login</button>
     </form>
-</div>
+    </div>
+</main>
+<footer>
+  <app-app-footer></app-app-footer>
+</footer>

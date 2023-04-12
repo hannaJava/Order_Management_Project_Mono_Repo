@@ -16,6 +16,8 @@ public class Product {
     @GeneratedValue(strategy=GenerationType.AUTO)
     @Column(name="product_id")
     private long id;
+    @Column(name="product_description")
+    private String description;
     @Column(name="product_name")
     private String name;
     @Column(name="product_unit_price")

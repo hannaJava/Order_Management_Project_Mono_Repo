@@ -1,1 +1,42 @@
-<p>update-customer works!</p>
+<header>
+    <app-app-header></app-app-header>
+  </header>
+  <main>
+    <app-admin-sidebar></app-admin-sidebar>
+    <div class="col-md-8 offset-md-3">
+        <h3 class="text-center"> Update customer</h3>
+        <form (ngSubmit)="onSubmit()">
+            <div class="form-group">
+                <label for="username1">Username</label>
+                <input type="text" class="form-control" id="username1" placeholder="Enter username"
+                [(ngModel)]="customer.username" name="username1">
+            </div>
+           <!--<div class="form-group">
+                <label for="password1">Password</label>
+                <input type="password" class="form-control" id="password1" placeholder="Enter Password"
+                [(ngModel)]="customer.password" name="password1">
+            </div>-->
+            <div class="form-group">
+                <label for="address1">Address</label>
+                <textarea class="form-control" id="address1" rows="3" placeholder="Enter Address"
+                [(ngModel)]="customer.address" name="address1"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="email1">Email address</label>
+                <input type="text" class="form-control" id="email1"  [(ngModel)]="customer.email" name="email1" placeholder="Enter email">
+                <!-- aria-describedby="emailHelp" >
+                <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>-->
+            </div>
+            <div class="form-group">
+                <label for="phone1">Phone number</label>
+                <input type="text" class="form-control" id="phone1"  [(ngModel)]="customer.phone" name="phone1" placeholder="Enter phone number">
+                <!--aria-describedby="phoneHelp" >
+                <small id="phoneHelp" class="form-text text-muted">We'll never share your phone number with anyone else.</small>-->
+            </div>
+            <button type="submit" class="btn btn-primary">Update Customer</button>
+      </form>
+    </div>
+  </main>
+  <footer>
+    <app-app-footer></app-app-footer>
+  </footer>

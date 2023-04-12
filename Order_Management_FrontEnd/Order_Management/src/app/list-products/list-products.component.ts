@@ -29,6 +29,23 @@ export class ListProductsComponent implements OnInit{
     this.router.navigate(['/update_product',id]);
   }
   deleteProduct(id:number){
-    this.router.navigate(['/delete_product',id]);
-  }
+    //this.router.navigate(['/delete_product',id]);
+      this.productService.deleteProduct(id).subscribe(
+        response=>{
+          console.log(response)
+        },
+        error=>console.log(error)
+      );
+      this.productService.publishActivityEventMessage('a product with id : '+id+' has been deleted').subscribe(
+        response=>{
+          console.log(response)
+        },
+        error=>console.log(error)
+      );
+      this.displayProductList();
+    }
+  
+    displayProductList(){
+      this.router.navigate(['/list_products'])
+    }
 }

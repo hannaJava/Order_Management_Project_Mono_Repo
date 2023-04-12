@@ -23,7 +23,7 @@ public class EmailServiceConsumer {
         //send email
         String subject="Order has been "+orderEvent.getStatus();
         String body="";
-        //sendEmail(orderEvent.getCustomerEmailId(),subject, body);
+        sendEmail(orderEvent.getCustomerEmailId(),subject, body);
     }
 
     public void sendEmail(String to,String subject,String body){

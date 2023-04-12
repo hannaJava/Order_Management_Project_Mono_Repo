@@ -15,7 +15,6 @@ public class FileUploadServiceImp implements FileUploadServiceInt{
             String path="D:\\Order Management(GenSpark Capstone Project)\\Order_Management_Project_Mono_Repo\\Order_Management_BackEnd\\OM_OrderMicroservice\\gifts_uploads\\"
                     +multipartFile.getOriginalFilename();
             multipartFile.transferTo(new File(path));
-            //multipartFile.transferTo(new File(""));
         }
         catch(Exception exception){
 

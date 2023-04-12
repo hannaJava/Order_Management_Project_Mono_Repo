@@ -29,6 +29,23 @@ export class ListCustomersComponent implements OnInit{
     this.router.navigate(['/update_customer',id]);
   }
   deleteCustomer(id:number){
-    this.router.navigate(['/delete_customer',id]);
+    //this.router.navigate(['/delete_customer',id]);
+    this.customerService.deleteCustomer(id).subscribe(
+      response=>{
+        console.log(response)
+      },
+      error=>console.log(error)
+    );
+    this.customerService.publishActivityEventMessage('a customer with id : '+id+' has been deleted').subscribe(
+      response=>{
+        console.log(response)
+      },
+      error=>console.log(error)
+    );
+    this.displayCustomerList();
+  }
+
+  displayCustomerList(){
+    this.router.navigate(['/list_customers'])
   }
 }

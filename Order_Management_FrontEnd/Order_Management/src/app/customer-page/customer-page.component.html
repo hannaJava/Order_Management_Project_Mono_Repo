@@ -1,36 +1,9 @@
 <header>
-    <h1 class="text-center">Order Management Application</h1>
-    <h3 class="text-center">Admin Page</h3>
+    <app-app-header></app-app-header>  
   </header>
-  <div class="container">
-    <router-outlet></router-outlet>
-  </div>
   <main>
-    <div class="col-md-8 offset-md-3">
-      <form (ngSubmit)="dashboard()">
-          <button class="btn btn-success" type="submit">DashBoard</button>
-      </form>
-      <form (ngSubmit)="logout()">
-          <button class="btn btn-success" type="submit">Logout</button>
-      </form>
-    </div>
-    <div class="col-md-8 offset-md-3">
-        <form (ngSubmit)="addOrder()">
-            <button class="btn btn-success" type="submit">Add Order</button>
-        </form>
-        <form (ngSubmit)="updateDeleteOrder()">
-            <button class="btn btn-success" type="submit">Update/Delete Order</button>
-        </form>
-        <form (ngSubmit)="listOrders()">
-            <button class="btn btn-success" type="submit">List Orders</button>
-        </form>
-        <form (ngSubmit)="listProducts()">
-            <button class="btn btn-success" type="submit">List Products</button>
-        </form>
-      </div>
+    <app-customer-sidebar></app-customer-sidebar>
   </main>
   <footer>
-    <div>
-        <span></span>
-    </div>
+    <app-app-footer></app-app-footer>
   </footer>

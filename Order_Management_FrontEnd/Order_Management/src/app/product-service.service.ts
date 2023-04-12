@@ -2,19 +2,18 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Product } from './product';
-import { Order } from './order';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProductServiceService {
 
-  private getAllUrl="http://localhost:9096/order_management/products/";
-  private getUrl="http://localhost:9096/order_management/products";
-  private addUrl="http://localhost:9096/order_management/products/";
-  private updateUrl="http://localhost:9096/order_management/products";
-  private deleteUrl="http://localhost:9096/order_management/products";
-  private publishUrl="http://localhost:9093/order_manage/order_events/publish";
+  private getAllUrl="http://localhost:9096/order_manage/products/";
+  private getUrl="http://localhost:9096/order_manage/products";
+  private addUrl="http://localhost:9096/order_manage/products/";
+  private updateUrl="http://localhost:9096/order_manage/products";
+  private deleteUrl="http://localhost:9096/order_manage/products";
+  private publishUrl="http://localhost:9093/order_manage/order_activities/publish";
 
   constructor(private httpClient:HttpClient) { }
 
@@ -38,8 +37,13 @@ export class ProductServiceService {
     return this.httpClient.delete(`${this.deleteUrl}/${id}`);
   }
 
-  publishOrderEventMessage(orderStatus:string,order:Order):Observable<Object>{
+  publishActivityEventMessage(event:string):Observable<Object>{
+    console.log(event);
+    return this.httpClient.post(`${this.publishUrl}`,event);
+  }
+
+  /*publishOrderEventMessage(orderStatus:string,order:Order):Observable<Object>{
     console.log(order);
     return this.httpClient.post(`${this.publishUrl}/${orderStatus}`,order);
-  }
+  }*/
 }

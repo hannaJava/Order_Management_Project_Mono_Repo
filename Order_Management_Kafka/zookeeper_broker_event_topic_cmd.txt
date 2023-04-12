@@ -1,0 +1,43 @@
+
+start zookeepr server:
+======================
+D:\kafka>.\bin\windows\zookeeper-server-start.bat .\config\zookeeper.properties
+
+
+Start Kafka-server:
+=====================
+Broker D:\kafka>.\bin\windows\kafka-server-start.bat .\config\server.properties 
+
+
+topics managing:
+==================
+//Create a Kafka topic 
+D:\kafka\bin\windows>kafka-topics.bat --create --topic orderEventTopic --bootstrap-server localhost:9092 --partitions 3 --replication-factor 1 
+confluent
+./kafka-topics --create --topic orderEventTopic --bootstrap-server localhost:9092
+
+//List Kafka topics 
+D:\kafka\bin\windows>kafka-topics.bat --list --bootstrap-server localhost:9092 
+
+//Describe Kafka topic 
+D:\kafka\bin\windows>kafka-topics.bat --describe --topic orderEventTopic --bootstrap-server localhost:9092 
+
+
+//Delete Kafka topic 
+D:\kafka\bin\windows>Kafka-topics.bat --delete --topic orderEventTopic --bootstrap-server localhost:9092
+
+start producer:
+==================
+kafka-console-producer.bat --bootstrap-server localhost:9092  --topic orderEventTopic
+
+
+Start consumer:
+================
+kafka-console-consumer.bat --topic orderEventTopic --from-beginning --bootstrap-server localhost:9092
+
+
+==============================
+HTTP Method: POST
+URL: http://localhost:9098/order_manage/order_events/publish/created   //{status} created or cancelled
+
+

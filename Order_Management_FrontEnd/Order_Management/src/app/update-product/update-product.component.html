@@ -1,1 +1,35 @@
-<p>update-product works!</p>
+<header>
+    <app-app-header></app-app-header>
+  </header>
+  <main>
+    <app-admin-sidebar></app-admin-sidebar>
+    <div class="col-md-8 offset-md-3">
+      <h3 class="text-center">Update product</h3>
+      <form (ngSubmit)="onSubmit()">
+          <div class="form-group">
+              <label for="name1">Product name</label>
+              <input type="text" class="form-control" id="name1" placeholder="Enter product name"
+              [(ngModel)]="product.name" name="name1">
+          </div>
+          <div class="form-group">
+              <label for="price1">Unit price</label>
+              <input type="number" class="form-control" id="price1" placeholder="Enter unit price"
+              [(ngModel)]="product.unitPrice" name="price1">
+          </div>
+          <div class="form-group">
+              <label for="description1">Product description</label>
+              <textarea class="form-control" id="description1" rows="3" placeholder="Enter product description"
+              [(ngModel)]="product.description" name="description1"></textarea>
+            </div>
+          <div class="form-group">
+              <label for="qte">Quantity</label>
+              <input type="number" class="form-control" id="qte" placeholder="Enter quantity"
+              [(ngModel)]="product.qte" name="qte">
+          </div>
+          <button type="submit" class="btn btn-primary">Update product</button>
+      </form>
+      </div>
+  </main>
+  <footer>
+    <app-app-footer></app-app-footer>
+  </footer>

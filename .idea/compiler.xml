@@ -7,11 +7,11 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="HR_management_eureka_discovery_server" />
-        <module name="OM_KafkaConsumerMicroservice" />
+        <module name="OM_KafkaEventProducerMicroservice" />
         <module name="OM_ProductMicroservice" />
         <module name="OM_EntryPointMicroservice" />
-        <module name="OM_KafkaProducerMicroservice" />
         <module name="OM_OrderMicroservice" />
+        <module name="OM_KafkaEventConsumerMicroservice" />
         <module name="OM_CustomerMicroservice" />
         <module name="OM_DiscoveryServer" />
       </profile>
@@ -31,8 +31,8 @@
       <module name="OM_CustomerMicroservice" options="-parameters" />
       <module name="OM_DiscoveryServer" options="-parameters" />
       <module name="OM_EntryPointMicroservice" options="-parameters" />
-      <module name="OM_KafkaConsumerMicroservice" options="-parameters" />
-      <module name="OM_KafkaProducerMicroservice" options="-parameters" />
+      <module name="OM_KafkaEventConsumerMicroservice" options="-parameters" />
+      <module name="OM_KafkaEventProducerMicroservice" options="-parameters" />
       <module name="OM_OrderMicroservice" options="-parameters" />
       <module name="OM_ProductMicroservice" options="-parameters" />
       <module name="OrderManagement_CustomerMicroservice" options="-parameters" />

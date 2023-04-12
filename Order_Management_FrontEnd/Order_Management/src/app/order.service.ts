@@ -8,12 +8,13 @@ import { Order } from './order';
 })
 export class OrderService {
 
-  private getAllUrl="http://localhost:9097/order_management/orders/";
-  private getUrl="http://localhost:9097/order_management/orders";
-  private addUrl="http://localhost:9097/order_management/orders/";
-  private updateUrl="http://localhost:9097/order_management/orders";
-  private deleteUrl="http://localhost:9097/order_management/orders";
-  private publishUrl="http://localhost:9093/order_manage/order_events/publish";
+  private getAllUrl="http://localhost:9097/order_manage/orders/";
+  private getUrl="http://localhost:9097/order_manage/orders";
+  private addUrl="http://localhost:9097/order_manage/orders/";
+  private updateUrl="http://localhost:9097/order_manage/orders";
+  private deleteUrl="http://localhost:9097/order_manage/orders";
+  private publishUrlAct="http://localhost:9093/order_manage/order_activities/publish";
+  private publishUrlEvent="http://localhost:9098/order_manage/order_events/publish";//spring update
 
   constructor(private httpClient:HttpClient) { }
 
@@ -37,8 +38,13 @@ export class OrderService {
     return this.httpClient.delete(`${this.deleteUrl}/${id}`);
   }
 
+  publishActivityEventMessage(event:string):Observable<Object>{
+    console.log(event);
+    return this.httpClient.post(`${this.publishUrlAct}`,event);
+  }
+
   publishOrderEventMessage(orderStatus:string,order:Order):Observable<Object>{
     console.log(order);
-    return this.httpClient.post(`${this.publishUrl}/${orderStatus}`,order);
+    return this.httpClient.post(`${this.publishUrlEvent}/${orderStatus}`,order);
   }
 }

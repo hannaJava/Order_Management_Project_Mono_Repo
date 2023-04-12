@@ -6,17 +6,16 @@ import { AdminPageComponent } from './admin-page/admin-page.component';
 import { CustomerPageComponent } from './customer-page/customer-page.component';
 import { AddCustomerComponent } from './add-customer/add-customer.component';
 import { UpdateCustomerComponent } from './update-customer/update-customer.component';
-import { DeleteCustomerComponent } from './delete-customer/delete-customer.component';
 import { ListCustomersComponent } from './list-customers/list-customers.component';
 import { AddProductComponent } from './add-product/add-product.component';
 import { UpdateProductComponent } from './update-product/update-product.component';
-import { DeleteProductComponent } from './delete-product/delete-product.component';
 import { ListProductsComponent } from './list-products/list-products.component';
 import { MainPageComponent } from './main-page/main-page.component';
 import { AddOrderComponent } from './add-order/add-order.component';
 import { UpdateOrderComponent } from './update-order/update-order.component';
-import { DeleteOrderComponent } from './delete-order/delete-order.component';
-import { ListOrderComponent } from './list-order/list-order.component';
+import { ListProductCustomerComponent } from './list-product-customer/list-product-customer.component';
+import { ListOrdersComponent } from './list-orders/list-orders.component';
+import { ListOrderCustomerComponent } from './list-order-customer/list-order-customer.component';
 
 const routes: Routes = [
   {path:'main_page', component:MainPageComponent},
@@ -26,17 +25,16 @@ const routes: Routes = [
   {path:'customer_page',component:CustomerPageComponent},
   {path:'customer_admin',component:CustomerPageComponent},
   {path:'add_customer',component:AddCustomerComponent},
-  {path:'update_customer',component:UpdateCustomerComponent},
-  {path:'delete_customer',component:DeleteCustomerComponent},
+  {path:'update_customer/:id',component:UpdateCustomerComponent},
   {path:'list_customers',component:ListCustomersComponent},
   {path:'add_product',component:AddProductComponent},
-  {path:'update_product',component:UpdateProductComponent},
-  {path:'delete_product',component:DeleteProductComponent},
+  {path:'update_product/:id',component:UpdateProductComponent},
   {path:'list_products',component:ListProductsComponent},
+  {path:'list_products_customer',component:ListProductCustomerComponent},
   {path:'add_order',component:AddOrderComponent},
-  {path:'update_order',component:UpdateOrderComponent},
-  {path:'delete_order',component:DeleteOrderComponent},
-  {path:'list_orders',component:ListOrderComponent},
+  {path:'update_order/:id',component:UpdateOrderComponent},
+  {path:'list_orders',component:ListOrdersComponent},
+  {path:'list_orders_customer',component:ListOrderCustomerComponent},
   {path:'',redirectTo:'main_page',pathMatch:'full'}
 ];
 

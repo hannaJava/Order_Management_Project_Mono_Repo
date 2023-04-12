@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { enviroment } from 'src/enviroments/enviroment';
+import { CustomerServiceService } from '../customer-service.service';
+import { Customer } from '../customer';
 
 @Component({
   selector: 'app-customer-login',
@@ -8,7 +11,9 @@ import { Router } from '@angular/router';
 })
 export class CustomerLoginComponent implements OnInit{
 
-  constructor(private router:Router){
+  customer:Customer=new Customer;
+
+  constructor(private router:Router,private customerService:CustomerServiceService){
 
   }
   ngOnInit(): void {
@@ -16,6 +21,14 @@ export class CustomerLoginComponent implements OnInit{
   }
   login(){
     this.router.navigate(['/customer_page']);
+    this.customerService.getCustomerByUsername(this.customer.username).subscribe(
+        response=> {
+          this.customer=response
+        },
+        error=> console.log(error)  
+    );
+    enviroment.userId=5;//this.customer.id;
+    console.log(enviroment.userId);
   }
 
 }

@@ -60,4 +60,9 @@ public class CustomerServiceImpl implements CustomerServiceInt{
         customerRepository.save(dep);
         // }
     }
+
+    @Override
+    public Customer getCustomerByUsername(String username) {
+        return customerRepository.findByUsername(username);
+    }
 }

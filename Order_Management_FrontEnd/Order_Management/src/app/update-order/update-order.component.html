@@ -1,1 +1,24 @@
-<p>update-order works!</p>
+<header>
+    <app-app-header></app-app-header>
+  </header>
+  <main>
+    <app-customer-sidebar></app-customer-sidebar>
+    <div class="col-md-8 offset-md-3">
+    <h3 class="text-center">Update order</h3>
+    <form (ngSubmit)="onSubmit()">
+        <div class="form-group">
+            <label for="qte">Quantity</label>
+            <input type="text" class="form-control" id="qte" placeholder="Enter quantity"
+            [(ngModel)]="order.qte" name="qte">
+        </div>
+        <!--<div class="form-group">
+            <label for="file1">Uplaod gift</label>
+            <input type="file" class="form-control-file" id="file1">   
+        </div>-->
+        <button type="submit" class="btn btn-primary">Update Order</button>
+  </form>
+</div>
+  </main>
+  <footer>
+    <app-app-footer></app-app-footer>
+  </footer>

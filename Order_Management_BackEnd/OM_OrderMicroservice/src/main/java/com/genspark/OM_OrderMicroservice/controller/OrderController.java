@@ -2,6 +2,7 @@ package com.genspark.OM_OrderMicroservice.controller;
 
 import com.genspark.OM_OrderMicroservice.model.Order;
 import com.genspark.OM_OrderMicroservice.model.OrderObjectsWrapper;
+import com.genspark.OM_OrderMicroservice.service.EmailServiceImp;
 import com.genspark.OM_OrderMicroservice.service.FileUploadServiceInt;
 import com.genspark.OM_OrderMicroservice.service.OrderServiceInt;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,6 +15,7 @@ import reactor.util.annotation.Nullable;
 import java.util.List;
 
 @RestController
+@CrossOrigin("*")
 @RequestMapping("/order_manage/orders")
 public class OrderController {
 
@@ -21,6 +23,9 @@ public class OrderController {
     OrderServiceInt orderService;
     @Autowired
     FileUploadServiceInt fileUploadService;
+
+    @Autowired
+    EmailServiceImp emailService;
     @GetMapping("/")
     public List<Order> getAllOrders(){
         return orderService.getAllOrders();
@@ -61,5 +66,10 @@ public class OrderController {
     public void uploadFile(@RequestParam("file") MultipartFile multipartFile){    //which//@Annotation//to use?!
         System.out.println(" uploaded file with original name "+multipartFile.getOriginalFilename());
         fileUploadService.fileUpload(multipartFile);
+    }
+
+    @PostMapping("/sendmail/{email}")
+    public void sendEmail(@PathVariable("email") String email){
+        emailService.sendEmail(email);
     }
 }

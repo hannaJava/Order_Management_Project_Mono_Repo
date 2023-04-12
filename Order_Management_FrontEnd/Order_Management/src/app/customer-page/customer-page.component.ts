@@ -7,28 +7,10 @@ import { Router } from '@angular/router';
   styleUrls: ['./customer-page.component.css']
 })
 export class CustomerPageComponent implements OnInit{
-  constructor(private router:Router){
+  constructor(){
   }
   
   ngOnInit(): void {
-    
-  }
-  dashboard(){
-
-  }
-  logout(){
-
-  }
-  addOrder(){
-    this.router.navigate(['/add_order']);
-  }
-  updateDeleteOrder(){
-    
-  }
-  listOrders(){
-    
-  }
-  listProducts(){
     
   }
 
