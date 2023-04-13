@@ -50,13 +50,13 @@ public class CustomerServiceImpl implements CustomerServiceInt{
     }
 
     @Override
-    public void updateCustomer(long id,Customer customer) {
+    public Customer updateCustomer(long id,Customer customer) {
         Customer optional=customerRepository.findById(id).orElseThrow(()-> new RecordNotFoundException("no Customer exist with id: "+id));
         optional.setUsername(customer.getUsername());
         optional.setPhone(customer.getPhone());
         optional.setAddress(customer.getAddress());
         optional.setEmail(customer.getEmail());
-        customerRepository.save(optional);
+        return customerRepository.save(optional);
     }
 
     @Override

@@ -75,9 +75,9 @@ public class OrderServiceImpl implements OrderServiceInt{
     }
 
     @Override
-    public void updateOrder(Long id,Order order) {
+    public Order updateOrder(Long id,Order order) {
         Order optional=orderRepository.findById(id).orElseThrow(()-> new RecordNotFoundException("no order exist with id: "+id));
         optional.setQte(order.getQte());
-        orderRepository.save(optional);
+        return orderRepository.save(optional);
     }
 }

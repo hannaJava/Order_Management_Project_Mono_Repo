@@ -12,5 +12,5 @@ public interface OrderServiceInt {
     OrderObjectsWrapper getOrderCustomerProduct(Long id);
     Order deleteOrder(Long id);
 
-    void updateOrder(Long id,Order order);
+    Order updateOrder(Long id,Order order);
 }

@@ -52,8 +52,7 @@ public class OrderController {
     }
     @PutMapping("/{id}")
     public Order updateOrder(@PathVariable("id") long id,@RequestBody Order Order){
-        orderService.updateOrder(id,Order);
-        return orderService.getOrderById(id);
+        return orderService.updateOrder(id,Order);
     }
 
     @DeleteMapping("/{id}")
