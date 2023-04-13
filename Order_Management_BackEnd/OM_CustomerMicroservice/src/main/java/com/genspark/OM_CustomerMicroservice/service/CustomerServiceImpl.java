@@ -32,13 +32,14 @@ public class CustomerServiceImpl implements CustomerServiceInt{
     @Override
     public Customer getCustomerById(long id) {
         return customerRepository.findById(id).orElseThrow(()-> new RecordNotFoundException("no Customer exist with id: "+id));
+
     }
 
-    @Override
+    /*@Override
     public List<Customer> getCustomerByAddress(String address) {
         customerRepository.getByAddress(address);
         return customerRepository.getByAddress(address);
-    }
+    }*/
 
     @Override
     public Customer deleteCustomer(long id) {
@@ -51,18 +52,16 @@ public class CustomerServiceImpl implements CustomerServiceInt{
     @Override
     public void updateCustomer(long id,Customer customer) {
         Customer optional=customerRepository.findById(id).orElseThrow(()-> new RecordNotFoundException("no Customer exist with id: "+id));
-        //Optional<Customer> optional=CustomerRepository.findById(id);
-        Customer dep;
-        //if(optional.isPresent()){
-        dep=optional;//.get();
-       // dep.setCustomerLocation(Customer.getCustomerLocation());
-       // dep.setCustomerName(Customer.getCustomerName());
-        customerRepository.save(dep);
-        // }
+        optional.setUsername(customer.getUsername());
+        optional.setPhone(customer.getPhone());
+        optional.setAddress(customer.getAddress());
+        optional.setEmail(customer.getEmail());
+        customerRepository.save(optional);
     }
 
     @Override
     public Customer getCustomerByUsername(String username) {
+
         return customerRepository.findByUsername(username);
     }
 }

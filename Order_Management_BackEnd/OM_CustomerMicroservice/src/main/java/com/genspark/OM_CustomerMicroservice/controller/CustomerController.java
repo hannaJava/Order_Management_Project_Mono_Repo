@@ -18,20 +18,16 @@ public class CustomerController {
     public List<Customer> getAllCustomers(){
         return customerService.getAllCustomers();
     }
-    @GetMapping("/{id}")
+    @GetMapping("/id/{id}")
     public Customer getCustomerById(@PathVariable("id") long id){
+
         return customerService.getCustomerById(id);
     }
 
-    @GetMapping("/{username}")
-    public Long getCustomerById(@PathVariable("username") String username){
-        return customerService.getCustomerByUsername(username).getId();
+    @GetMapping("/username/{username}")
+    public Customer getCustomerByUsername(@PathVariable("username") String username){
+        return customerService.getCustomerByUsername(username);
     }
-    /*@PostMapping("/add")
-    public Customer saveCustomer(@RequestBody Customer Customer){
-        CustomerService.saveCustomer(Customer);
-        return CustomerService.getCustomerById(Customer.getId());
-    }*/
     @PostMapping("/")
     public long saveCustomer(@RequestBody Customer Customer) {
         customerService.saveCustomer(Customer);

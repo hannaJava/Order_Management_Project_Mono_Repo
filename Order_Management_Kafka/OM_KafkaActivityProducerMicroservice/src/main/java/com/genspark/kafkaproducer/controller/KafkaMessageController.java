@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @CrossOrigin("*")
-@RequestMapping("/api/producer")//, produces="text/plain")
+@RequestMapping("/order_manage/order_activities")//, produces="text/plain")
 public class KafkaMessageController
 {
    
@@ -22,10 +22,10 @@ public class KafkaMessageController
     }*/
 
     @PostMapping("/publish")
-    public String publishMessage(@RequestBody String hrEvent)
+    public String publishMessage(@RequestBody String orderActivity)
     {
-        System.out.println("HR event message = '" + hrEvent + "' published to the HrEventTopic");
-        kafkaProducerImpl.sendMessage(hrEvent);
-        return "HR event message = '" + hrEvent + "' published to the HrEventTopic";
+        System.out.println("order activity message = '" + orderActivity + "' published to the orderActivityTopic");
+        kafkaProducerImpl.sendMessage(orderActivity);
+        return "Order activity message = '" + orderActivity + "' published to the orderActivityTopic";
     }
 }

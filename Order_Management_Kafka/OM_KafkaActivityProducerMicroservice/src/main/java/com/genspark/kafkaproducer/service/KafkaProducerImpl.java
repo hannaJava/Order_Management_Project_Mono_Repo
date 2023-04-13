@@ -8,10 +8,10 @@ import org.springframework.stereotype.Service;
 public class KafkaProducerImpl implements KafkaProducerInt {
 	@Autowired
 	private KafkaTemplate<String, String> kafkaTemplate;
-	private final static String TOPIC_NAME = "HrEventTopic";
+	private final static String TOPIC_NAME = "orderActivityTopic";
 
-	public void sendMessage(String hrEvent)
+	public void sendMessage(String orderActivity)
 	{
-		kafkaTemplate.send(TOPIC_NAME, hrEvent);
+		kafkaTemplate.send(TOPIC_NAME, orderActivity);
 	}
 }

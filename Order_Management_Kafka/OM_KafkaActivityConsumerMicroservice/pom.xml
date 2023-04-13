@@ -8,7 +8,7 @@
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.ram</groupId>
-	<artifactId>HR_management_KafkaConsumer</artifactId>
+	<artifactId>OM_KafkaActivityConsumerMicroservice</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>KafkaConsumerDemo</name>
 	<description>Springboot Kafka Consumer</description>

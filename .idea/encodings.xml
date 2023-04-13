@@ -17,8 +17,14 @@
     <file url="file://$PROJECT_DIR$/Order_Management_BackEnd/Order_Management_Order_Microservice/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Order_Management_BackEnd/Order_Management_Product_Microservice/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Order_Management_BackEnd/Order_Management_Product_Microservice/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Order_Management_Kafka/OM_KafkaActivityConsumerMicroservice/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Order_Management_Kafka/OM_KafkaActivityConsumerMicroservice/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Order_Management_Kafka/OM_KafkaActivityProducerMicroservice/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Order_Management_Kafka/OM_KafkaActivityProducerMicroservice/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Order_Management_Kafka/OM_KafkaEventConsumerMicroservice/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Order_Management_Kafka/OM_KafkaEventConsumerMicroservice/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Order_Management_Kafka/OM_KafkaEventProducerMicroservice/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Order_Management_Kafka/OM_KafkaEventProducerMicroservice/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Order_Management_Kafka/OrderManagement_KafkaConsumerMicroservice/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Order_Management_Kafka/OrderManagement_KafkaConsumerMicroservice/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Order_Management_Kafka/Order_Management_KafkaProducerMicroservice/src/main/java" charset="UTF-8" />

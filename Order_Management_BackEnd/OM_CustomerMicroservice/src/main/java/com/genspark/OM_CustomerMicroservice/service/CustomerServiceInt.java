@@ -9,7 +9,7 @@ public interface CustomerServiceInt {
     Customer saveCustomer(Customer Customer);
     List<Customer> getAllCustomers();
     Customer getCustomerById(long id);
-    List<Customer> getCustomerByAddress(String address);
+   // List<Customer> getCustomerByAddress(String address);
 
     Customer deleteCustomer(long id);
 

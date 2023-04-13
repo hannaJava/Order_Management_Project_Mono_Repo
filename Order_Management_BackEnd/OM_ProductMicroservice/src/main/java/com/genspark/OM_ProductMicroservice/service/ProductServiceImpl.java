@@ -40,13 +40,10 @@ public class ProductServiceImpl implements ProductServiceInt{
     @Override
     public void updateProduct(long id,Product product) {
         Product optional=productRepository.findById(id).orElseThrow(()-> new RecordNotFoundException("no Product exist with id: "+id));
-        //Optional<Product> optional=ProductRepository.findById(id);
-        Product pro;
-        //if(optional.isPresent()){
-        pro=optional;//.get();
-       // dep.setProductLocation(Product.getProductLocation());
-       // dep.setProductName(Product.getProductName());
-        productRepository.save(pro);
-        // }
+        optional.setName(product.getName());
+        optional.setDescription(product.getDescription());
+        optional.setUnitPrice(product.getUnitPrice());
+        optional.setQte(product.getQte());
+        productRepository.save(optional);
     }
 }

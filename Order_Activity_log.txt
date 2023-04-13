@@ -1,0 +1,13 @@
+an order with id : 21 has been updated
+an order with id : 21 has been updated
+a new order has been created by customer id : -1
+an order with id : 22 has been updated
+a new order has been created by customer id : 5
+a new order has been created by customer id : -1
+a new order has been created by customer id : 0
+a new order has been created by customer id : 0
+a new order has been created by customer id : 0
+a new order has been created by customer id : 0
+a new order has been created by customer id : 0
+a new order has been created by customer id : 0
+a new order has been created by customer id : 0

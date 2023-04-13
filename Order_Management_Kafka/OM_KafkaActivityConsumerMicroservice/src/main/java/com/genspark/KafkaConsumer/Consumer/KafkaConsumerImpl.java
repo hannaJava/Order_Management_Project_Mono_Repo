@@ -15,21 +15,21 @@ public class KafkaConsumerImpl implements KafkaConsumerInt{
 	FileWriter out;
 
 	public KafkaConsumerImpl() throws IOException {
-		output="HR_Activity_log.txt";
+		output="Order_Activity_log.txt";
 		file=new File(output);
 		out=new FileWriter(file) ;
 	}
 
-	@KafkaListener(topics = "HrEventTopic", groupId = "Group1")
-	public void listen(String hrEvent)
+	@KafkaListener(topics = "orderActivityTopic", groupId = "Group1")
+	public void listen(String orderActivity)
 	{
 
-		System.out.println("Received '" + hrEvent +"' from the HrEventTopic." );
+		System.out.println("Received '" + orderActivity +"' from the orderActivityTopic." );
 		try {
-			out.append(hrEvent);
+			out.append(orderActivity);
 			out.append("\n");
 			out.flush();
-			System.out.println("writing in a HR_Activity_log file!!!");
+			System.out.println("writing in a Order_Activity_log file!!!");
 		}
 		catch(Exception e) {
 			System.out.println(e);

@@ -34,7 +34,7 @@ export class UpdateOrderComponent implements OnInit{
   }
 
   displayOrderList(){
-    this.router.navigate(['/list_orders'])
+    this.router.navigate(['/list_orders_customer'])
   }
 
   updateOrder(id:number,order:Order){
@@ -44,8 +44,8 @@ export class UpdateOrderComponent implements OnInit{
       },
       error=>console.log(error) 
     );
-    console.log('a order with id : '+this.order.id+' has been updated');
-    this.orderService.publishActivityEventMessage('a order with id : '+this.order.id+' has been updated').subscribe(
+    console.log('an order with id : '+this.order.id+' has been updated');
+    this.orderService.publishActivityEventMessage('an order with id : '+this.order.id+' has been updated').subscribe(
       response=>{
         console.log(response)
       },

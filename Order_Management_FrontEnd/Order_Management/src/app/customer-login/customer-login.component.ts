@@ -20,15 +20,17 @@ export class CustomerLoginComponent implements OnInit{
   
   }
   login(){
-    this.router.navigate(['/customer_page']);
+    console.log(this.customer.username);
     this.customerService.getCustomerByUsername(this.customer.username).subscribe(
-        response=> {
-          this.customer=response
-        },
-        error=> console.log(error)  
-    );
-    enviroment.userId=5;//this.customer.id;
-    console.log(enviroment.userId);
+      response=> {
+        this.customer=response
+      },
+      error=> console.log(error)  
+  );
+  enviroment.userId=this.customer.id;
+  console.log(this.customer.id);
+  console.log(this.customer.username);
+  console.log(this.customer.address);
+    this.router.navigate(['/customer_page']);
   }
-
 }

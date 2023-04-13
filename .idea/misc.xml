@@ -19,6 +19,10 @@
         <option value="$PROJECT_DIR$/Order_Management_Kafka/OM_KafkaConsumerMicroservice/pom.xml" />
         <option value="$PROJECT_DIR$/Order_Management_Kafka/OM_KafkaProducerMicroservice/pom.xml" />
         <option value="$PROJECT_DIR$/Order_Management_BackEnd/OM_EntryPointMicroservice/pom.xml" />
+        <option value="$PROJECT_DIR$/Order_Management_Kafka/OM_KafkaActivityConsumerMicroservice/pom.xml" />
+        <option value="$PROJECT_DIR$/Order_Management_Kafka/OM_KafkaActivityProducerMicroservice/pom.xml" />
+        <option value="$PROJECT_DIR$/Order_Management_Kafka/OM_KafkaEventConsumerMicroservice/pom.xml" />
+        <option value="$PROJECT_DIR$/Order_Management_Kafka/OM_KafkaEventProducerMicroservice/pom.xml" />
       </list>
     </option>
   </component>

@@ -63,7 +63,7 @@ public class OrderController {
     }
 
     @PostMapping("/upload")
-    public void uploadFile(@RequestParam("file") MultipartFile multipartFile){    //which//@Annotation//to use?!
+    public void uploadFile(@RequestParam("file") MultipartFile multipartFile){    //which//@Annotation//to use?! @RequestPart
         System.out.println(" uploaded file with original name "+multipartFile.getOriginalFilename());
         fileUploadService.fileUpload(multipartFile);
     }

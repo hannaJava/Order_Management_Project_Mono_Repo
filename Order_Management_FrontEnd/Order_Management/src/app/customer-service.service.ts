@@ -9,7 +9,8 @@ import { Order } from './order';
 })
 export class CustomerServiceService {
   private getAllUrl="http://localhost:9095/order_manage/customers/";
-  private getUrl="http://localhost:9095/order_manage/customers";
+  private getUrlId="http://localhost:9095/order_manage/customers/id";
+  private getUrlUsername="http://localhost:9095/order_manage/customers/username";
   private addUrl="http://localhost:9095/order_manage/customers/";
   private updateUrl="http://localhost:9095/order_manage/customers";
   private deleteUrl="http://localhost:9095/order_manage/customers";
@@ -26,10 +27,10 @@ export class CustomerServiceService {
   }
 
   getCustomerById(id:number):Observable<Customer>{
-      return this.httpClient.get<Customer>(`${this.getUrl}/${id}`);
+      return this.httpClient.get<Customer>(`${this.getUrlId}/${id}`);
   }
   getCustomerByUsername(username:string):Observable<Customer>{
-    return this.httpClient.get<Customer>(`${this.getUrl}/${username}`);
+    return this.httpClient.get<Customer>(`${this.getUrlUsername}/${username}`);
 }
 
   updateCustomer(id:number,customer:Customer):Observable<any>{
