@@ -24,5 +24,13 @@ public class Order {
     private Long productId;
 
     @Column(name="qte")
-    private Long qte;
+    private int qte;
+
+    //@Column(name="gift")
+   // @Lob
+    //private byte[] gift;
+
+   // public Order(byte[] gift){
+   //     this.gift=gift;
+   // }
 }

@@ -6,11 +6,10 @@ import com.genspark.OM_OrderMicroservice.service.EmailServiceImp;
 import com.genspark.OM_OrderMicroservice.service.FileUploadServiceInt;
 import com.genspark.OM_OrderMicroservice.service.OrderServiceInt;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
+
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
-import reactor.util.annotation.Nullable;
+
 
 import java.util.List;
 
@@ -36,7 +35,7 @@ public class OrderController {
     }
 
     @GetMapping("/cust_prod/{id}")
-    public OrderObjectsWrapper getOrderCustomerProduct(Long id){
+    public OrderObjectsWrapper getOrderCustomerProduct(@PathVariable("id") long id){
 
         /*OrderObjectsWrapper orderObjectsWrapper= orderService.getOrderCustomerProduct(id);
         ResponseEntity<OrderObjectsWrapper> responseEntity;
@@ -46,18 +45,17 @@ public class OrderController {
     }
 
     @PostMapping("/")
-    public long addOrder(@RequestBody Order Order) {
-        orderService.saveOrder(Order);
-        return orderService.getOrderById(Order.getId()).getId();
+    public Order addOrder(@RequestBody Order order){//,@RequestParam("file") MultipartFile multipartFile) throws IOException {
+        //order.setGift(multipartFile.getBytes());
+        return orderService.saveOrder(order);
     }
     @PutMapping("/{id}")
-    public Order updateOrder(@PathVariable("id") long id,@RequestBody Order Order){
-        return orderService.updateOrder(id,Order);
+    public Order updateOrder(@PathVariable("id") long id,@RequestBody Order order) {
+        return orderService.updateOrder(id,order);
     }
 
     @DeleteMapping("/{id}")
     public Order deleteOrder(@PathVariable("id") long id){
-
         return orderService.deleteOrder(id);
     }
 

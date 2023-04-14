@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Customer } from '../customer';
 import { CustomerServiceService } from '../customer-service.service';
 import { Router } from '@angular/router';
+import { Subscription, interval } from 'rxjs';
 
 @Component({
   selector: 'app-add-customer',
@@ -14,30 +15,35 @@ export class AddCustomerComponent implements OnInit{
   constructor(private customerService:CustomerServiceService,private router:Router){
   }
  ngOnInit():void{
+
   }
 
   onSubmit(){
     //console.log(this.department);
     this.addCustomer();
-   /*this.customerService.publishActivityEventMessage('a new customer has been created ').subscribe(
-      response=>{
-        //console.log(response)
-      },
-      error=>console.log(error)
-    );*/
+    console.log(this.customer);
     this.displayCustomerList();
+   
   }
 
   addCustomer(){
     this.customerService.addCustomer(this.customer).subscribe(
       response=>{
-        console.log(response);
+        this.customer=response
       },
-      error=>console.log(error) 
+      error=>console.log(error)
     );
+
+    this.customerService.getCustomerByUsername(this.customer.username).subscribe(
+      {
+        next:response=>console.log('customer by username '+response),
+        error:error=>console.log(error)
+      }
+    ).add;
+
     this.customerService.publishActivityEventMessage('a new customer has been created').subscribe(
       response=>{
-        console.log(response)
+        console.log('activity '+response)
       },
       error=>console.log(error)
     );

@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Customer } from './customer';
 import { Observable } from 'rxjs';
-import { Order } from './order';
 
 @Injectable({
   providedIn: 'root'
@@ -22,23 +21,26 @@ export class CustomerServiceService {
     return this.httpClient.get<Customer[]>(`${this.getAllUrl}`);//(`${this.baseUrl}`);
   }
 
-  addCustomer(customer:Customer):Observable<any>{
-      return this.httpClient.post<any>(`${this.addUrl}`,customer);
+  addCustomer(customer:Customer):Observable<Customer>{
+      return this.httpClient.post<Customer>(`${this.addUrl}`,customer);
   }
 
   getCustomerById(id:number):Observable<Customer>{
       return this.httpClient.get<Customer>(`${this.getUrlId}/${id}`);
   }
+  /*getCustomerByUsername(username:string):Observable<Customer>{
+    return this.httpClient.get<Customer>(`${this.getUrlUsername}/${username}`);
+  }*/
   getCustomerByUsername(username:string):Observable<Customer>{
     return this.httpClient.get<Customer>(`${this.getUrlUsername}/${username}`);
-}
-
-  updateCustomer(id:number,customer:Customer):Observable<any>{
-      return this.httpClient.put(`${this.updateUrl}/${id}`,customer);
   }
 
-  deleteCustomer(id:number):Observable<any>{
-    return this.httpClient.delete(`${this.deleteUrl}/${id}`);
+  updateCustomer(id:number,customer:Customer):Observable<Customer>{
+      return this.httpClient.put<Customer>(`${this.updateUrl}/${id}`,customer);
+  }
+
+  deleteCustomer(id:number):Observable<Customer>{
+    return this.httpClient.delete<Customer>(`${this.deleteUrl}/${id}`);
   }
 
   publishActivityEventMessage(event:string):Observable<Object>{

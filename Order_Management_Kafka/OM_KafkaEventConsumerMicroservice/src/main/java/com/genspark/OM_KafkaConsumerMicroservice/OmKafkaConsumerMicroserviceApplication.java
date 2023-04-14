@@ -7,6 +7,7 @@ import org.springframework.kafka.annotation.EnableKafka;
 
 @SpringBootApplication
 @EnableEurekaClient
+@EnableKafka
 public class OmKafkaConsumerMicroserviceApplication {
 
 	public static void main(String[] args) {

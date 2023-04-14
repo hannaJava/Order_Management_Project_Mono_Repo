@@ -2,15 +2,16 @@
     <app-app-header></app-app-header>
     </header>
 <main>
+    <router-outlet></router-outlet>
     <div class="col-md-8 offset-md-3">
     <h2>Customer Login Page</h2>
     <form (ngSubmit)="login()">
         <div class="form-group">
             <label>Username</label>
-            <input type="text" class="form-control" id="username1" name="username"
+            <input type="text" class="form-control" id="username1"
             [(ngModel)]="customer.username" name="username1">
             <label>Password</label>
-            <input type="password" class="form-control" id="password" name="password"
+            <input type="password" class="form-control" id="password"
             [(ngModel)]="customer.password" name="password">
         </div>
         <button class="btn btn-success" type="submit">Login</button>

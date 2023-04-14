@@ -18,10 +18,10 @@ import java.util.Map;
 //@EnableKafka
 @Configuration
 public class KafkaConsumerConfig {
-    @Value("${spring.kafka.consumer.bootstrap-servers}")
-    String bootstrapServers;
-    @Value("${spring.kafka.consumer.group_id}")
-    String GROUP_ID;
+    //@Value("${spring.kafka.consumer.bootstrap-servers}")
+    String bootstrapServers="localhost:9092";
+    //@Value("${spring.kafka.consumer.group_id}")
+    String GROUP_ID="group-email";
     @Bean
     public ConsumerFactory<String, OrderEvent> consumerFactory(){
         Map<String, Object> props = new HashMap<>();

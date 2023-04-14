@@ -25,9 +25,8 @@ public class ProductController {
         return productService.getProductById(id);
     }
     @PostMapping("/")
-    public long addProduct(@RequestBody Product Product) {
-        productService.saveProduct(Product);
-        return productService.getProductById(Product.getId()).getId();
+    public Product addProduct(@RequestBody Product Product) {
+        return productService.saveProduct(Product);
     }
     @PutMapping("/{id}")
     public Product updateProduct(@PathVariable("id") long id,@RequestBody Product Product){

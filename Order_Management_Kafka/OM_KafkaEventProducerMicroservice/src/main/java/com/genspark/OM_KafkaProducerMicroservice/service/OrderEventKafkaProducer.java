@@ -15,7 +15,7 @@ import org.springframework.stereotype.Service;
 public class OrderEventKafkaProducer {
     public static final Logger LOGGER= LoggerFactory.getLogger(OrderEventKafkaProducer.class);
     //private NewTopic topic;
-    private final static String TOPIC_NAME = "orderEventTopic";
+    private final static String TOPIC_NAME = "orderStatusEventTopic";
     @Autowired
     private KafkaTemplate<String, OrderEvent> kafkaTemplate;
 

@@ -11,7 +11,7 @@ import { Customer } from '../customer';
 })
 export class CustomerLoginComponent implements OnInit{
 
-  customer:Customer=new Customer;
+  customer:Customer=new Customer();
 
   constructor(private router:Router,private customerService:CustomerServiceService){
 

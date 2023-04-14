@@ -24,7 +24,7 @@ public class OrderServiceTest {
     @Test
     public void getOrderByIdTest(){
         long id=2;
-        Order expected=new Order(2L,2L,2L,1L);
+        Order expected=new Order(2L,2L,2L,1,null);
         Mockito.when(orderRepository.findById(id)).thenReturn(Optional.of(expected));
         Order actual=orderService.getOrderById(id);
         Assert.assertEquals(expected,actual);
@@ -32,7 +32,7 @@ public class OrderServiceTest {
 
     @Test
     public void saveOrderTest(){
-        Order expected=new Order(2L,2L,2L,1L);
+        Order expected=new Order(2L,2L,2L,1,null);
         Mockito.when(orderRepository.save(expected)).thenReturn(expected);
         Order actual=orderService.saveOrder(expected);
         Assert.assertEquals(expected,actual);
@@ -41,7 +41,7 @@ public class OrderServiceTest {
     @Test
     public void updateOrderTest(){
         long id=2;
-        Order expected=new Order(2L,2L,2L,1L);
+        Order expected=new Order(2L,2L,2L,1,null);
         Mockito.when(orderRepository.findById(id)).thenReturn(Optional.of(expected));
         Mockito.when(orderRepository.save(expected)).thenReturn(expected);
         Order actual=orderService.updateOrder(id,expected);
@@ -51,7 +51,7 @@ public class OrderServiceTest {
     @Test
     public void deleteOrderTest(){
         long id=2;
-        Order expected=new Order(2L,2L,2L,1L);
+        Order expected=new Order(2L,2L,2L,1,null);
         Mockito.when(orderRepository.findById(id)).thenReturn(Optional.of(expected));
         Order actual=orderService.deleteOrder(id);
         Assert.assertEquals(expected,actual);

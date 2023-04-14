@@ -29,9 +29,8 @@ public class CustomerController {
         return customerService.getCustomerByUsername(username);
     }
     @PostMapping("/")
-    public long saveCustomer(@RequestBody Customer Customer) {
-        customerService.saveCustomer(Customer);
-        return customerService.getCustomerById(Customer.getId()).getId();
+    public Customer saveCustomer(@RequestBody Customer Customer) {
+        return customerService.saveCustomer(Customer);
     }
     @PutMapping("/{id}")
     public Customer updateCustomer(@PathVariable("id") long id,@RequestBody Customer Customer){

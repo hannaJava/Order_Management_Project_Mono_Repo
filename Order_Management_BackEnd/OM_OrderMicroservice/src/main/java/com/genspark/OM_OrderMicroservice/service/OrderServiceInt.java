@@ -8,9 +8,9 @@ import java.util.List;
 public interface OrderServiceInt {
     Order saveOrder(Order order);
     List<Order> getAllOrders();
-    Order getOrderById(Long id);
-    OrderObjectsWrapper getOrderCustomerProduct(Long id);
-    Order deleteOrder(Long id);
+    Order getOrderById(long id);
+    OrderObjectsWrapper getOrderCustomerProduct(long id);
+    Order deleteOrder(long id);
 
-    Order updateOrder(Long id,Order order);
+    Order updateOrder(long id,Order order);
 }

@@ -16,14 +16,15 @@ public class EmailServiceConsumer {
 
     @Autowired
     private JavaMailSender mailSender;
-    @KafkaListener(topics = "${spring.kafka.topic.name}", groupId = "${spring.kafka.consumer.group_id}")
+    private final static String TOPIC_NAME = "orderStatusEventTopic";
+    @KafkaListener(topics = TOPIC_NAME, groupId = "group-email")
     public void consume(OrderEvent orderEvent){
         LOGGER.info(String.format("order event ->%s",orderEvent.toString()));
         LOGGER.info(String.format("order event ->%s",orderEvent.getStatus().toString()));
         //send email
         String subject="Order has been "+orderEvent.getStatus();
         String body="";
-        sendEmail(orderEvent.getCustomerEmailId(),subject, body);
+        sendEmail("hanane7885@gmail.com",subject, body);
     }
 
     public void sendEmail(String to,String subject,String body){

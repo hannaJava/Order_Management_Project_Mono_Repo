@@ -18,6 +18,7 @@ public class OrderEventProducerController {
         orderEvent.setOrder(order);
         orderEvent.setStatus(status);//created or cancelled
         orderEvent.setMessage("an order has been "+status);
+        orderEvent.setCustomerEmailId("hanane7885@gmail.com");
         orderEventKafkaProducer.sendMessage(orderEvent);
     }
 }

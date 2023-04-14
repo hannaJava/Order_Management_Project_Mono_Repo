@@ -29,9 +29,18 @@ public class OrderServiceImpl implements OrderServiceInt{
     private static final String ORDER_SERVICE="order_circuit_breaker";
 
     @Override
+    //@CircuitBreaker(name=ORDER_SERVICE,fallbackMethod = "OrderServiceFallback")
     public Order saveOrder(Order order) {
-        String status="created";
+        String orderStatus="created";
         //restTemplate.postForEntity();//publish message to broker with created status
+        restTemplate.postForEntity("http://EVENT-PRODUCER-SERVICE/order_manage/order_events/publish/"+orderStatus,
+                order,Order.class);
+        //restTemplate.postForEntity();//update product qte
+        //Product product=restTemplate.getForObject("http://PRODUCT-SERVICE/order_manage/products/"+order.getProductId(),Product.class);
+        //if(product.getQte()-order.getQte()>=0)
+           // {   int qte= product.getQte()-order.getQte();
+               // product.setQte(qte);}
+        //restTemplate.postForEntity("http://PRODUCT-SERVICE/order_manage/products/"+product.getId(),product,Product.class);
         return orderRepository.save(order);
     }
 
@@ -41,17 +50,18 @@ public class OrderServiceImpl implements OrderServiceInt{
     }
 
     @Override
-    public Order getOrderById(Long id) {
+    public Order getOrderById(long id) {
         return orderRepository.findById(id).orElseThrow(()-> new RecordNotFoundException("no order exist with id: "+id));
     }
 
     @Override
     @CircuitBreaker(name=ORDER_SERVICE,fallbackMethod = "OrderServiceFallback")
     //@Retry(name=ORDER_SERVICE,fallbackMethod ="fallback_retry")
-    public OrderObjectsWrapper getOrderCustomerProduct(Long id) {
+    public OrderObjectsWrapper getOrderCustomerProduct(long id) {
         Order order=orderRepository.findById(id).orElseThrow(()-> new RecordNotFoundException("no order exist with id: "+id));
+        System.out.println(order.toString());
         Product product=restTemplate.getForObject("http://PRODUCT-SERVICE/order_manage/products/"+order.getProductId(),Product.class);
-        Customer customer=restTemplate.getForObject("http://CUSTOMER-SERVICE/order_manage/customers/"+order.getCustomerId(),Customer.class);
+        Customer customer=restTemplate.getForObject("http://CUSTOMER-SERVICE/order_manage/customers/id/"+order.getCustomerId(),Customer.class);
         OrderObjectsWrapper orderObjectsWrapper=new OrderObjectsWrapper();
         orderObjectsWrapper.setOrder(order);
         orderObjectsWrapper.setProduct(product);
@@ -64,20 +74,28 @@ public class OrderServiceImpl implements OrderServiceInt{
     }
 
     @Override
-    public Order deleteOrder(Long id) {
+   // @CircuitBreaker(name=ORDER_SERVICE,fallbackMethod = "OrderServiceFallback")
+    public Order deleteOrder(long id) {
         Order order=orderRepository.findById(id).orElseThrow(()-> new RecordNotFoundException("no order exist with id: "+id));
         // if( order==null) return;
         String status="cancelled";
         String customerEmailId="";//Customer customer=restTemplate.getForObject("http://CUSTOMER-SERVICE/order_manage/customers/"+order.getCustomerId(),Customer.class).getEmailId;
         //restTemplate.postForEntity();//publish message to broker with cancelled status
-        orderRepository.deleteById(id);
+        //restTemplate.postForEntity();//update product qte
+       /* Product product=restTemplate.getForObject("http://PRODUCT-SERVICE/order_manage/products/"+order.getProductId(),Product.class);
+        int qte= product.getQte()+order.getQte();
+            product.setQte(qte);
+        restTemplate.postForEntity("http://PRODUCT-SERVICE/order_manage/products/"+product.getId(),product,Product.class);
+        */orderRepository.deleteById(id);
         return order;
     }
 
     @Override
-    public Order updateOrder(Long id,Order order) {
+   // @CircuitBreaker(name=ORDER_SERVICE,fallbackMethod = "OrderServiceFallback")
+    public Order updateOrder(long id,Order order) {
         Order optional=orderRepository.findById(id).orElseThrow(()-> new RecordNotFoundException("no order exist with id: "+id));
         optional.setQte(order.getQte());
+        //restTemplate.postForEntity();//update product qte
         return orderRepository.save(optional);
     }
 }

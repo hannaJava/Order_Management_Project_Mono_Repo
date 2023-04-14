@@ -1,0 +1,28 @@
+ 
+order
+{
+      
+  "customerId": 5,
+        "productId": 6,
+        "qte": 2
+    }
+
+customer
+{
+        "username": "customer3",
+        "password": "$2a$10$r2Qf9pLhB6kyNg7qvQbegO4GwK7Mal3weeh7tEMRd0ESwAZQ4ZsLW",
+        "address": "address3",
+        "phone": "1234569887",
+        "email": "email3@domain.com"
+    }
+localhost:9095/order_manage/customers/
+localhost:9095/order_manage/customers/id/16
+localhost:9095/order_manage/customers/username/customer3
+
+product 
+{
+        "description": "Android",
+        "name": "mobile",
+        "unitPrice": 1000.0,
+        "qte": 50
+    }
